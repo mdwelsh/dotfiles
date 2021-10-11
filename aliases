@@ -1,0 +1,24 @@
+alias ls='ls -G'
+
+# List all git branches ordered by oldest first.
+branches() {
+  git for-each-ref \
+    --sort=committerdate refs/heads/ \
+    --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
+}
+
+# Delete all branches with commits older than 6 weeks ago.
+deleteoldbranches() {
+  rm -f /tmp/deloldbranches.$$
+  for branch in $(git branch | sed /\*/d | grep -v ' master$'); do
+    if [[ "$(git log $branch --since '6 weeks ago' | wc -l)" -eq 0 ]]; then
+      echo "echo $branch ... ; git branch -D $branch" >> /tmp/deloldbranches.$$
+    fi
+  done
+  numbranches=$(cat /tmp/deloldbranches.$$ | wc -l)
+  echo "About to delete $numbranches branches..."
+  source /tmp/deloldbranches.$$
+  cat /tmp/deloldbranches.$$
+  echo "Done."
+}
+
