@@ -1,0 +1,25 @@
+Host airfoil
+  HostName 10.10.2.58
+
+Host deepnest
+  ForwardX11 yes
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+
+Host mdw-t4
+  User mdw_octoml_ai
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+
+Host octoml-github
+  HostName github.com
+  Port 22
+  User git
+  IdentityFile ~/.ssh/id_ed25519-octoml
+
+Host greenpath
+  HostName greenpath

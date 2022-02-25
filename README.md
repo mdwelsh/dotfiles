@@ -1,2 +1,3 @@
-# dotfiles
-My dotfiles.
+# Dotfiles
+
+Matt Welsh's dotfiles.

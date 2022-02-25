@@ -1,0 +1,9 @@
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold red):"
+disabled = false
+
+[directory]
+truncation_length = 20
+truncation_symbol = "…/"
+truncate_to_repo = false

@@ -1,4 +1,5 @@
 alias ls='ls -G'
+alias ko='kubectl --namespace octomizer'
 
 # List all git branches ordered by oldest first.
 branches() {
