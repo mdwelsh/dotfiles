@@ -23,8 +23,11 @@ export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python
 # Set up fzf.
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Set up zoxide (Z).
-eval "$(zoxide init bash)"
+#eval "$(zoxide init bash)"
 
 source $HOME/.aliases
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# My GitHub access token for mdwelsh.
+export GITHUB_TOKEN=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
