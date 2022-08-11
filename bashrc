@@ -1,4 +1,4 @@
-export PS1="pharloom:\w% "
+export PS1="\h:\w% "
 export EDITOR=vim
 alias vi=vim
 
@@ -16,18 +16,12 @@ source $HOME/bin/git-completion.bash
 # Initialize pyenv.
 eval "$(pyenv init -)"
 
-# TVM setup
+# TVM setup.
 export TVM_HOME=$HOME/src/tvm
 export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python
 
-# Set up fzf.
-#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# Set up zoxide (Z).
-#eval "$(zoxide init bash)"
-
 source $HOME/.aliases
 
+# Yarn setup.
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# My GitHub access token for mdwelsh.
-export GITHUB_TOKEN=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
